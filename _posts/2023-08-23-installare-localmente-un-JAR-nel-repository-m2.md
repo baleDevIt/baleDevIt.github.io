@@ -14,8 +14,8 @@ Per questo una volta creato il JAR con le dipendenze è possibile installare loc
 
 Procediamo come segue:
 - Impostare il progetto in modo tale da generare il JAR con le dipendenze
+
 ```
-// Aggiungere le necessarie dipendenze
 <dependencies>
   <dependency>
         <groupId>org.apache.maven.plugins</groupId>
@@ -53,19 +53,22 @@ Procediamo come segue:
   </plugins>
 </build>
 ```
+
 - Generare il JAR
+
 ```
 mvn clean package
 ```
+
 - Installare localmente un JAR sul repository .m2 
+
 ```
 // Se il progetto aveva il pom.xml
 
 mvn install:install-file \
 -Dfile=target/api-football-wrapper-1.1-SNAPSHOT.jar \
 -DpomFile=pom.xml
-```
-```
+
 // Se il progetto non aveva il pom.xml
 
 mvn install:install-file \
@@ -74,8 +77,7 @@ mvn install:install-file \
 -DartifactId=api-football-wrapper \
 -Dversion=1.0-SNAPSHOT \
 -Dpackaging=jar
-```
-```
+
 //Se si vuole associare anche il codice sorgente
 
 -Dsources=target/restmud-engine-1.4-SNAPSHOT-sources.jar
